@@ -6,6 +6,7 @@ import { Queen } from './figures/Queen';
 import { Bishop } from './figures/Bishop';
 import { Rook } from './figures/Rook';
 import { Knight } from './figures/Knight';
+
 export class Board {
     cells: Cell[][] = []
 
@@ -20,6 +21,23 @@ export class Board {
                 }
             }
             this.cells.push(row);
+        }
+    }
+
+    public getCopyBoard(): Board {
+        const newBoard = new Board();
+        newBoard.cells = this.cells;
+        return newBoard;
+    }
+
+    public highlightCells(selectedCell: Cell | null) {
+        for (let i = 0; i < this.cells.length; i++) {
+            const row = this.cells[i];
+            for (let j = 0; j < row.length; j++) {
+                const target = row[j];
+                target.available = !!selectedCell?.figure?.canMove(target);
+            }
+
         }
     }
 
