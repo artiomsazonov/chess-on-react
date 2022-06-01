@@ -12,38 +12,44 @@
 }
 
 .board {
-  width: calc(64px*8);
-  height: calc(64px*8);
+  width: calc(64px * 8);
+  height: calc(64px * 8);
   display: flex;
   flex-wrap: wrap;
 }
 
-.cell{
+.cell {
   width: 64px;
   height: 64px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.cell img{
+.cell img {
   width: 48px;
   height: 48px;
   position: relative;
 }
 
-.black-cell{
-background-color: deepskyblue;
+.black-cell {
+  background-color: deepskyblue;
 }
 
-.white-cell{
+.white-cell {
   background-color: #eed4ac;
 }
-.selected{
+.selected {
   background-color: brown;
 }
-.available{
+.available {
   height: 12px;
   width: 12px;
   border-radius: 50%;
   background-color: #22c022;
+}
+.lost {
+  height: calc(50vh - 60px);
+  padding: 30px;
+  margin-left: 50px;
+  background-color: lightgray;
 }
